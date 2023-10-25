@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import {useGetCountries} from "../hooks/hooks";
-import Button from "./Button";
+import {useGetCountries} from "../../hooks/hooks";
+import Button from "../buttons/Button";
 
 const Header = () => {
   const {data} = useGetCountries();
