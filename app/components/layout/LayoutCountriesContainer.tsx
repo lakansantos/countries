@@ -6,7 +6,7 @@ type LayoutCountriesContainerCardType = {
 const LayoutCountriesContainer = (props: LayoutCountriesContainerCardType) => {
   const {children} = props;
   return (
-    <div className="h-fit flex flex-wrap gap-10 justify-center items-center">
+    <div className="countries-container h-fit flex flex-wrap gap-10 justify-center p-10 items-center">
       {children}
     </div>
   );

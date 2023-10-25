@@ -25,3 +25,7 @@ body {
   background: #555;
   cursor: pointer;
 }
+
+.countries-container {
+  background: rgb(231, 231, 231);
+}

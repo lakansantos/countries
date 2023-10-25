@@ -1,10 +1,12 @@
-"use client";
 import LayoutHeader from "@/app/components/layout/LayoutHeader";
-import {useGetCountries} from "@/app/hooks/hooks";
+
 import React from "react";
 
-const Header = () => {
-  const {data} = useGetCountries();
+type HeaderProps = {
+  data: [] | null;
+};
+const Header = (props: HeaderProps) => {
+  const {data} = props;
   return <LayoutHeader data={data} />;
 };
 
