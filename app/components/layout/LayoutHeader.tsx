@@ -1,11 +1,11 @@
-"use client";
-
 import React from "react";
-import {useGetCountries} from "../../hooks/hooks";
 import Button from "../buttons/Button";
 
-const Header = () => {
-  const {data} = useGetCountries();
+type HeaderProps = {
+  data: [] | null;
+};
+const Header = (props: HeaderProps) => {
+  const {data} = props;
 
   const countriesCount = data?.length || 0;
 
