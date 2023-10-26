@@ -4,9 +4,10 @@ import React from "react";
 type LayoutCountriesCardPropsType = {
   country_name: string;
   flag: string;
+  languages: {[key: string]: string}[];
 };
 const LayoutCountriesCard = (props: LayoutCountriesCardPropsType) => {
-  const {country_name, flag} = props;
+  const {country_name, flag, languages} = props;
 
   return (
     <div className=" w-[220px] h-[350px] bg-white flex flex-col">
@@ -23,6 +24,7 @@ const LayoutCountriesCard = (props: LayoutCountriesCardPropsType) => {
         priority
       />
       <p>Capital: {country_name}</p>
+      <p>Languages: {languages?.map((language) => language.name).join(", ")}</p>
     </div>
   );
 };

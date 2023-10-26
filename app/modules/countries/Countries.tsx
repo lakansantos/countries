@@ -15,11 +15,12 @@ const Countries = (props: CountriesProps) => {
     <LayoutCountriesContainer>
       {!isLoading &&
         data?.map((country, key) => {
-          const {name, capital, flag} = country || {};
+          const {name, capital, flag, languages} = country || {};
           const dataProps = {
             capital,
             country_name: name,
             flag,
+            languages,
           };
           return <LayoutCountriesCard key={key} {...dataProps} />;
         })}
