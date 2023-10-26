@@ -11,7 +11,7 @@ const LayoutCountriesCard = (props: LayoutCountriesCardPropsType) => {
   const {country_name, flag, languages, population} = props;
 
   return (
-    <div className=" w-[220px] h-[350px] bg-white flex flex-col">
+    <div className=" w-[220px] h-[350px] bg-white flex flex-col my-4">
       <Image
         src={flag}
         alt={country_name}
