@@ -5,11 +5,11 @@ import Countries from "./modules/countries/Countries";
 import Header from "./modules/header/Header";
 
 export default function Home() {
-  const {data} = useGetCountries();
+  const {data, isLoading} = useGetCountries();
   return (
     <div>
       <Header data={data} />
-      <Countries data={data} />
+      <Countries data={data} isLoading={isLoading} />
     </div>
   );
 }

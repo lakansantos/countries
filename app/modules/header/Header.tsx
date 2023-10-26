@@ -1,4 +1,4 @@
-import LayoutHeader from "@/app/components/layout/LayoutHeader";
+import LayoutHeader from "@/app/components/Layouts/LayoutHeader";
 
 import React from "react";
 

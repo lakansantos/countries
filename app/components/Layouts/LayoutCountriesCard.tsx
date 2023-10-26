@@ -10,7 +10,6 @@ const LayoutCountriesCard = (props: LayoutCountriesCardPropsType) => {
 
   return (
     <div className=" w-[220px] h-[350px] bg-white flex flex-col">
-      {country_name}
       <Image
         src={flag}
         alt={country_name}
@@ -23,6 +22,7 @@ const LayoutCountriesCard = (props: LayoutCountriesCardPropsType) => {
         }}
         priority
       />
+      <p>Capital: {country_name}</p>
     </div>
   );
 };
