@@ -6,9 +6,10 @@ type LayoutCountriesCardPropsType = {
   flag: string;
   languages: {[key: string]: string}[];
   population: number;
+  capital: string;
 };
 const LayoutCountriesCard = (props: LayoutCountriesCardPropsType) => {
-  const {country_name, flag, languages, population} = props;
+  const {country_name, capital, flag, languages, population} = props;
 
   //To get the name of languages
   const languageNames = languages?.map((language) => language.name);
@@ -34,7 +35,7 @@ const LayoutCountriesCard = (props: LayoutCountriesCardPropsType) => {
     : formattedOneLanguage;
 
   return (
-    <div className=" w-[220px] h-[350px] bg-white flex flex-col my-4">
+    <div className="w-[220px] h-[350px] bg-white flex flex-col my-4 p-2">
       <Image
         src={flag}
         alt={country_name}
@@ -47,9 +48,12 @@ const LayoutCountriesCard = (props: LayoutCountriesCardPropsType) => {
         }}
         priority
       />
-      <p>Capital: {country_name}</p>
-      <p>Languages: {formattedLanguages}</p>
-      <p>Population: {population}</p>
+      <div className="p-2">
+        <h1 className="text-center text-sky-400 font-bold">{country_name}</h1>
+        <p>Capital: {capital}</p>
+        <p>Languages: {formattedLanguages}</p>
+        <p>Population: {population}</p>
+      </div>
     </div>
   );
 };

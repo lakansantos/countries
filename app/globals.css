@@ -29,3 +29,11 @@ body {
 .countries-container {
   background: rgb(231, 231, 231);
 }
+
+.countries-container::-webkit-scrollbar {
+  background: inherit;
+  width: 0.2em;
+}
+.countries-container::-webkit-scrollbar-thumb {
+  background: #777;
+}

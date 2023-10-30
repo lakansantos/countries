@@ -10,7 +10,7 @@ const Header = (props: HeaderProps) => {
   const countriesCount = data?.length || 0;
 
   return (
-    <header className="h-[250px] text-center">
+    <header className="h-[30vh] text-center">
       <h1 className="text-5xl p-[20px] text-sky-400 font-bold">
         World Countries Data
       </h1>
