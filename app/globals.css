@@ -13,7 +13,7 @@ body {
 }
 
 header {
-  background: rgba(0, 0, 0, 0.7) url("/background-header-nature.jpg") no-repeat
+  background: rgba(0, 0, 0, 0.7) url("/globe-header-background.jpeg") no-repeat
     center/cover;
   color: white;
   background-blend-mode: darken;
