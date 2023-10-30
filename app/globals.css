@@ -12,6 +12,12 @@ body {
   color: rgb(var(--foreground-rgb));
 }
 
+header {
+  background: rgba(0, 0, 0, 0.7) url("/background-header-nature.jpg") no-repeat
+    center/cover;
+  color: white;
+  background-blend-mode: darken;
+}
 .btn {
   padding: 10px;
   width: 120px;

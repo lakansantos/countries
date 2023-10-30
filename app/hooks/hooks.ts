@@ -7,6 +7,7 @@ import {useEffect, useState} from "react";
 export const useGetCountries = () => {
   const [data, setData] = useState<[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState(false);
   const fetchData = async () => {
     try {
       setIsLoading(true);
@@ -15,6 +16,7 @@ export const useGetCountries = () => {
       setData(data);
       setIsLoading(false);
     } catch (err) {
+      setError(true);
       console.error(err);
     } finally {
       setIsLoading(false);
@@ -25,5 +27,5 @@ export const useGetCountries = () => {
     fetchData();
   }, []);
 
-  return {data, isLoading};
+  return {data, isLoading, error};
 };
