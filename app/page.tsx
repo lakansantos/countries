@@ -1,18 +1,14 @@
 "use client";
 
-import {useGetCountries} from "./hooks/hooks";
-import Countries from "./modules/countries/Countries";
-import ErrorPage from "./modules/error/ErrorPage";
-import Header from "./modules/header/Header";
+import {CountriesProvider} from "./context/CountriesContext";
+import Home from "./modules/home/Home";
 
-export default function Home() {
-  const {data, isLoading, error} = useGetCountries();
-  return !error ? (
+export default function Index() {
+  return (
     <div>
-      <Header data={data} />
-      <Countries data={data} isLoading={isLoading} />
+      <CountriesProvider>
+        <Home />
+      </CountriesProvider>
     </div>
-  ) : (
-    <ErrorPage />
   );
 }

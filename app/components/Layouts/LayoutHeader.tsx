@@ -19,7 +19,7 @@ const Header = (props: HeaderProps) => {
       <input
         type="text"
         placeholder="Search a country..."
-        className="border border-black rounded-3xl w-1/3 py-2 indent-6"
+        className="border border-black rounded-3xl w-1/3 py-2 indent-6 text-black"
       />
       <div className="flex justify-center gap-3 items-center mt-4">
         Sort By: <Button buttonItems={buttonItems} />
