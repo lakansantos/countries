@@ -1,15 +1,41 @@
-import React from "react";
+"use client";
+
+import React, {useState} from "react";
+import BaseButton from "./BaseButton";
 
 type ButtonProps = {
-  label: string;
-  onClick?: () => void;
+  buttonItems: {
+    label: string;
+  }[];
 };
+
 const Button = (props: ButtonProps) => {
-  const {label, onClick} = props;
+  const {buttonItems} = props;
+  const [activeButtonIndex, setActiveButtonIndex] = useState<number | null>(
+    null
+  );
+
+  const handleActiveClick = (key: number) => {
+    if (key === activeButtonIndex) {
+      setActiveButtonIndex(null);
+    }
+    setActiveButtonIndex(key);
+  };
+
   return (
-    <div onClick={onClick} className="btn">
-      {label}
-    </div>
+    <React.Fragment>
+      {buttonItems.map((item, key) => {
+        const {label} = item;
+        return (
+          <BaseButton
+            key={key}
+            label={label}
+            active={activeButtonIndex === key}
+            onClick={() => handleActiveClick(key)}
+          />
+        );
+      })}
+    </React.Fragment>
   );
 };
 

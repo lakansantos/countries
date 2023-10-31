@@ -27,7 +27,8 @@ header {
   color: white;
 }
 
-.btn:hover {
+.btn:hover,
+.active {
   background: #555;
   cursor: pointer;
 }
