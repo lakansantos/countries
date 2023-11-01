@@ -8,9 +8,9 @@ type ButtonProps = {
 const BaseButton = (props: ButtonProps) => {
   const {label, onClick, active} = props;
   return (
-    <div onClick={onClick} className={active ? "btn active" : "btn"}>
+    <button onClick={onClick} className={active ? "btn active" : "btn"}>
       {label}
-    </div>
+    </button>
   );
 };
 
