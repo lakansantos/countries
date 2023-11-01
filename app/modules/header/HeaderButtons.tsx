@@ -39,12 +39,26 @@ function headerButtons(props: Props) {
 
   const sortByCapital = (data: Data[]) => {
     const sortedData = Object.values(data)?.sort((a, b) => {
-      if (isSortedByCapital || a.capital > b.capital) {
-        return -1;
-      } else {
-        return 1;
+      //Will fix the undefined or no official capitals
+      if (a.capital === undefined && b.capital !== undefined) {
+        return isSortedByCapital ? -1 : 1;
+      } else if (a.capital !== undefined && b.capital === undefined) {
+        return isSortedByCapital ? 1 : -1;
+      } else if (a.capital === undefined && b.capital === undefined) {
+        return 0;
       }
+
+      if (isSortedByCapital) {
+        if (a.capital > b.capital) return -1;
+        if (a.capital < b.capital) return 1;
+      } else {
+        if (a.capital > b.capital) return 1;
+        if (a.capital < b.capital) return -1;
+      }
+
+      return 0;
     });
+
     return sortedData;
   };
 
