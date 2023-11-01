@@ -6,6 +6,7 @@ import BaseButton from "./BaseButton";
 type ButtonProps = {
   buttonItems: {
     label: string;
+    onClick?: () => void;
   }[];
 };
 
@@ -25,13 +26,16 @@ const Button = (props: ButtonProps) => {
   return (
     <React.Fragment>
       {buttonItems.map((item, key) => {
-        const {label} = item;
+        const {label, onClick} = item;
         return (
           <BaseButton
             key={key}
             label={label}
             active={activeButtonIndex === key}
-            onClick={() => handleActiveClick(key)}
+            onClick={() => {
+              handleActiveClick(key);
+              if (onClick) onClick();
+            }}
           />
         );
       })}

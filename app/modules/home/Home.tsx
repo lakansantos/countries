@@ -6,6 +6,7 @@ import {useCountries} from "@/app/context/CountriesContext";
 
 const Home = () => {
   const {data, isLoading, error} = useCountries();
+
   return !error ? (
     <React.Fragment>
       <Header data={data} />

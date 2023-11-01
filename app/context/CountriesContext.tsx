@@ -5,12 +5,16 @@ type CountriesContextType = {
   isLoading: boolean;
   data: [] | null;
   error: boolean;
+  isSorted: boolean;
+  setSort: (isSorted: boolean) => void;
 };
 
 const defaultContextValue: CountriesContextType = {
   isLoading: false,
   data: null,
   error: false,
+  isSorted: false,
+  setSort: () => {},
 };
 
 const CountriesContext =
@@ -21,10 +25,12 @@ type Props = {
 };
 export const CountriesProvider = (props: Props) => {
   const {children} = props;
-  const {data, isLoading, error} = useGetCountries();
+  const {data, isLoading, error, isSorted, setSort} = useGetCountries();
 
   return (
-    <CountriesContext.Provider value={{data, isLoading, error}}>
+    <CountriesContext.Provider
+      value={{data, isLoading, error, isSorted, setSort}}
+    >
       {children}
     </CountriesContext.Provider>
   );

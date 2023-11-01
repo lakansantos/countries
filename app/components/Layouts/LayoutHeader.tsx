@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Buttons/Button";
 import headerButtons from "@/app/modules/header/HeaderButtons";
+import {useCountries} from "@/app/context/CountriesContext";
 
 type HeaderProps = {
   data: [] | null;
@@ -8,9 +9,10 @@ type HeaderProps = {
 const Header = (props: HeaderProps) => {
   const {data} = props;
 
+  const {isSorted, setSort} = useCountries();
   const countriesCount = data?.length || 0;
 
-  const buttonItems = headerButtons();
+  const buttonItems = headerButtons(isSorted, setSort);
 
   return (
     <header className="h-[30vh] text-center flex flex-col justify-evenly items-center">
