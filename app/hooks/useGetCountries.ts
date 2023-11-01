@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, {AxiosError} from "axios";
 import {API_PATH} from "../constants/configs";
 import {useEffect, useState} from "react";
 import {Data} from "../context/CountriesContext";
@@ -6,7 +6,7 @@ import {Data} from "../context/CountriesContext";
 export const useGetCountries = () => {
   const [data, setData] = useState<Data[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState<AxiosError | null>(null);
   const [isSortedByName, setSortByName] = useState(false);
   const [isSortedByCapital, setSortByCapital] = useState(false);
   const [isSortedByPopulation, setSortByPopulation] = useState(false);
@@ -21,7 +21,7 @@ export const useGetCountries = () => {
         setData(data);
         setIsLoading(false);
       } catch (err) {
-        setError(true);
+        setError(err as AxiosError);
         console.error(err);
       } finally {
         setIsLoading(false);

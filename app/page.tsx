@@ -1,13 +1,14 @@
 "use client";
 
 import {CountriesProvider} from "./context/CountriesContext";
-import Home from "./modules/home/Home";
 
-export default function Index() {
+import MainPage from "./modules/home/Home";
+
+export default function Home() {
   return (
     <div>
       <CountriesProvider>
-        <Home />
+        <MainPage />
       </CountriesProvider>
     </div>
   );

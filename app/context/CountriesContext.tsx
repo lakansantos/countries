@@ -1,5 +1,6 @@
 import React, {ReactNode, createContext, useContext} from "react";
 import {useGetCountries} from "../hooks/useGetCountries";
+import {AxiosError} from "axios";
 
 export type Data = {
   capital: string;
@@ -12,7 +13,7 @@ export type Data = {
 type CountriesContextType = {
   isLoading: boolean;
   data: Data[] | null;
-  error: boolean;
+  error: AxiosError | null;
   actions: {
     setSortByName: (state: boolean) => void;
     setData: (data: Data[] | null) => void;
@@ -29,7 +30,7 @@ type CountriesContextType = {
 const defaultContextValue: CountriesContextType = {
   isLoading: false,
   data: null,
-  error: false,
+  error: null,
   actions: {
     setSortByName: () => {},
     setSortByCapital: () => {},
