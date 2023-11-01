@@ -3,11 +3,6 @@ import {API_PATH} from "../constants/configs";
 import {useEffect, useState} from "react";
 import {Data} from "../context/CountriesContext";
 
-// type Data = {
-//   name: string;
-//   capital: string;
-//   population: number;
-// };
 export const useGetCountries = () => {
   const [data, setData] = useState<Data[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -17,36 +12,6 @@ export const useGetCountries = () => {
   const [isSortedByPopulation, setSortByPopulation] = useState(false);
 
   useEffect(() => {
-    // const sortByName = (data: Data[]) => {
-    //   const sortedData: {name: string}[] = data?.sort((a, b) => {
-    //     if (a.name > b.name) return -1;
-    //     if (b.name > a.name) return 1;
-    //     return 0;
-    //   });
-
-    //   return sortedData;
-    // };
-
-    // const sortByCapital = (data: Data[]) => {
-    //   const sortedData: {capital: string}[] = data?.sort((a, b) => {
-    //     if (a.capital > b.capital) return -1;
-    //     if (b.capital > a.capital) return 1;
-    //     return 0;
-    //   });
-
-    //   return sortedData;
-    // };
-
-    // const sortByPopulation = (data: Data[]) => {
-    //   const sortedData = data?.sort((a, b) => {
-    //     if (a.population > b.population) return -1;
-    //     if (b.population > a.population) return 1;
-    //     return 0;
-    //   });
-
-    //   return sortedData;
-    // };
-
     const getCountries = async () => {
       try {
         setIsLoading(true);
