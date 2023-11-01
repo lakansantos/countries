@@ -9,10 +9,10 @@ type HeaderProps = {
 const Header = (props: HeaderProps) => {
   const {data} = props;
 
-  const {isSorted, setSort} = useCountries();
+  const {actions, states} = useCountries();
   const countriesCount = data?.length || 0;
 
-  const buttonItems = headerButtons(isSorted, setSort);
+  const buttonItems = headerButtons({states, actions});
 
   return (
     <header className="h-[30vh] text-center flex flex-col justify-evenly items-center">
