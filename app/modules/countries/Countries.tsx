@@ -1,11 +1,12 @@
 import LayoutCountriesCard from "@/app/components/Layouts/LayoutCountriesCard";
 import LayoutCountriesContainer from "@/app/components/Layouts/LayoutCountriesContainer";
 import Loading from "@/app/components/Loading/Loading";
+import {Data} from "@/app/context/CountriesContext";
 
 import React from "react";
 
 type CountriesProps = {
-  data: [] | null;
+  data: Data[] | null;
   isLoading: boolean;
 };
 const Countries = (props: CountriesProps) => {

@@ -52,8 +52,8 @@ const LayoutCountriesCard = (props: LayoutCountriesCardPropsType) => {
         <h1 className="text-center text-sky-400 font-bold">{country_name}</h1>
         <div className="flex flex-col h-full grow gap-1.5">
           <p>Capital: {capital || "N/A"}</p>
-          <p>Languages: {formattedLanguages || "N/A"}</p>
-          <p>Population: {population || "N/A"}</p>
+          <p>Languages: {formattedLanguages}</p>
+          <p>Population: {population}</p>
         </div>
       </div>
     </div>

@@ -1,12 +1,21 @@
 import React, {ReactNode, createContext, useContext} from "react";
 import {useGetCountries} from "../hooks/useGetCountries";
 
+export type Data = {
+  capital: string;
+  name: string;
+  population: number;
+  flag: string;
+  languages: [];
+};
+
 type CountriesContextType = {
   isLoading: boolean;
-  data: [] | null;
+  data: Data[] | null;
   error: boolean;
   actions: {
     setSortByName: (state: boolean) => void;
+    setData: (data: Data[] | null) => void;
     setSortByCapital: (state: boolean) => void;
     setSortByPopulation: (state: boolean) => void;
   };
@@ -24,6 +33,7 @@ const defaultContextValue: CountriesContextType = {
   actions: {
     setSortByName: () => {},
     setSortByCapital: () => {},
+    setData: () => {},
     setSortByPopulation: () => {},
   },
   states: {
@@ -43,6 +53,7 @@ export const CountriesProvider = (props: Props) => {
   const {children} = props;
   const {
     data,
+    setData,
     isLoading,
     error,
     isSortedByName,
@@ -63,6 +74,7 @@ export const CountriesProvider = (props: Props) => {
     setSortByName,
     setSortByCapital,
     setSortByPopulation,
+    setData,
   };
   return (
     <CountriesContext.Provider

@@ -1,10 +1,10 @@
 import React from "react";
 import Button from "../Buttons/Button";
 import headerButtons from "@/app/modules/header/HeaderButtons";
-import {useCountries} from "@/app/context/CountriesContext";
+import {Data, useCountries} from "@/app/context/CountriesContext";
 
 type HeaderProps = {
-  data: [] | null;
+  data: Data[] | null;
 };
 const Header = (props: HeaderProps) => {
   const {data} = props;
@@ -12,7 +12,7 @@ const Header = (props: HeaderProps) => {
   const {actions, states} = useCountries();
   const countriesCount = data?.length || 0;
 
-  const buttonItems = headerButtons({states, actions});
+  const buttonItems = headerButtons({data, states, actions});
 
   return (
     <header className="h-[30vh] text-center flex flex-col justify-evenly items-center">
