@@ -10,6 +10,7 @@ type ButtonProps = {
   }[];
 };
 
+//this component will be used for multiple inline buttons
 const Button = (props: ButtonProps) => {
   const {buttonItems} = props;
   const [activeButtonIndex, setActiveButtonIndex] = useState<number | null>(

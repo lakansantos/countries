@@ -7,6 +7,7 @@ import {useCountries} from "@/app/context/CountriesContext";
 const Home = () => {
   const {data, isLoading, error} = useCountries();
 
+  //if error, will redirect to error page
   if (error) throw Error(error.message);
   return (
     <React.Fragment>
