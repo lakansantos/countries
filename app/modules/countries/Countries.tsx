@@ -18,7 +18,7 @@ const Countries = (props: CountriesProps) => {
           const {name, capital, flag, languages, population} = country || {};
           const dataProps = {
             capital,
-            country_name: name,
+            name,
             flag,
             languages,
             population,

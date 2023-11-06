@@ -2,9 +2,7 @@ type Props = {
   data: Data[] | null;
   states: {
     isSortedByName: boolean;
-
     isSortedByCapital: boolean;
-
     isSortedByPopulation: boolean;
   };
 

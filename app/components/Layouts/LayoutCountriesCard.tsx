@@ -1,15 +1,8 @@
 import Image from "next/image";
 import React from "react";
 
-type LayoutCountriesCardPropsType = {
-  country_name: string;
-  flag: string;
-  languages: {[key: string]: string}[];
-  population: number;
-  capital: string;
-};
-const LayoutCountriesCard = (props: LayoutCountriesCardPropsType) => {
-  const {country_name, capital, flag, languages, population} = props;
+const LayoutCountriesCard = (props: Data) => {
+  const {name: country_name, capital, flag, languages, population} = props;
 
   //To get the name of languages
   const languageNames = languages?.map((language) => language.name);

@@ -3,5 +3,9 @@ type Data = {
   name: string;
   population: number;
   flag: string;
-  languages: [];
+  languages: [
+    {
+      name: string;
+    },
+  ];
 };
