@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Buttons/Button";
 import headerButtons from "@/app/modules/header/HeaderButtons";
-import {Data, useCountries} from "@/app/context/CountriesContext";
+import {useCountries} from "@/app/context/CountriesContext";
 
 type HeaderProps = {
   data: Data[] | null;

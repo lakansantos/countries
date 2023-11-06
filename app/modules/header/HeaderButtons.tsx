@@ -1,5 +1,3 @@
-import {Data} from "@/app/context/CountriesContext";
-
 type Props = {
   data: Data[] | null;
   states: {

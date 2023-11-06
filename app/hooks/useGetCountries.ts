@@ -1,7 +1,6 @@
 import axios, {AxiosError} from "axios";
 import {API_PATH} from "../constants/configs";
 import {useEffect, useState} from "react";
-import {Data} from "../context/CountriesContext";
 
 export const useGetCountries = () => {
   const [data, setData] = useState<Data[] | null>(null);

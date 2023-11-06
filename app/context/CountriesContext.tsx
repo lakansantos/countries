@@ -2,14 +2,6 @@ import React, {ReactNode, createContext, useContext} from "react";
 import {useGetCountries} from "../hooks/useGetCountries";
 import {AxiosError} from "axios";
 
-export type Data = {
-  capital: string;
-  name: string;
-  population: number;
-  flag: string;
-  languages: [];
-};
-
 type CountriesContextType = {
   isLoading: boolean;
   data: Data[] | null;

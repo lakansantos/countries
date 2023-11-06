@@ -1,7 +1,6 @@
 import LayoutCountriesCard from "@/app/components/Layouts/LayoutCountriesCard";
 import LayoutCountriesContainer from "@/app/components/Layouts/LayoutCountriesContainer";
 import Loading from "@/app/components/Loading/Loading";
-import {Data} from "@/app/context/CountriesContext";
 
 import React from "react";
 
