@@ -5,10 +5,12 @@ import {AxiosError} from "axios";
 type CountriesContextType = {
   isLoading: boolean;
   data: Data[] | null;
+  searchedData: Data[] | null;
   error: AxiosError | null;
   actions: {
     setSortByName: (state: boolean) => void;
     setData: (data: Data[] | null) => void;
+    setSearchedData: (data: Data[] | null) => void;
     setSortByCapital: (state: boolean) => void;
     setSortByPopulation: (state: boolean) => void;
   };
@@ -22,11 +24,13 @@ type CountriesContextType = {
 const defaultContextValue: CountriesContextType = {
   isLoading: false,
   data: null,
+  searchedData: null,
   error: null,
   actions: {
     setSortByName: () => {},
     setSortByCapital: () => {},
     setData: () => {},
+    setSearchedData: () => {},
     setSortByPopulation: () => {},
   },
   states: {
@@ -47,6 +51,8 @@ export const CountriesProvider = (props: Props) => {
   const {
     data,
     setData,
+    searchedData,
+    setSearchedData,
     isLoading,
     error,
     isSortedByName,
@@ -68,10 +74,11 @@ export const CountriesProvider = (props: Props) => {
     setSortByCapital,
     setSortByPopulation,
     setData,
+    setSearchedData,
   };
   return (
     <CountriesContext.Provider
-      value={{data, isLoading, error, states, actions}}
+      value={{data, searchedData, isLoading, error, states, actions}}
     >
       {children}
     </CountriesContext.Provider>

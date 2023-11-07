@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 
 export const useGetCountries = () => {
   const [data, setData] = useState<Data[] | null>(null);
+  const [searchedData, setSearchedData] = useState<Data[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<AxiosError | null>(null);
   const [isSortedByName, setSortByName] = useState(false);
@@ -18,6 +19,7 @@ export const useGetCountries = () => {
         const {data} = response || {};
 
         setData(data);
+        setSearchedData(data);
         setIsLoading(false);
       } catch (err) {
         setError(err as AxiosError);
@@ -32,6 +34,8 @@ export const useGetCountries = () => {
   return {
     data,
     setData,
+    searchedData,
+    setSearchedData,
     isLoading,
     error,
     isSortedByName,
