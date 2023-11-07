@@ -19,7 +19,7 @@ export const useGetCountries = () => {
         const {data} = response || {};
 
         setData(data);
-        setSearchedData(data);
+
         setIsLoading(false);
       } catch (err) {
         setError(err as AxiosError);

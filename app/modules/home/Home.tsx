@@ -9,11 +9,12 @@ const Home = () => {
 
   //if error, will redirect to error page
   if (error) throw Error(error.message);
+
   return (
     <React.Fragment>
       <Header data={data} />
       <Countries
-        data={searchedData ? searchedData : data}
+        data={!!searchedData ? searchedData : data}
         isLoading={isLoading}
       />
     </React.Fragment>

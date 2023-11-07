@@ -24,7 +24,7 @@ const Header = (props: HeaderProps) => {
       : [];
 
     if (e.currentTarget.value === "") {
-      setSearchedData(data);
+      setSearchedData(null);
     } else {
       setSearchedData(filteredCountries);
     }
