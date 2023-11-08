@@ -8,12 +8,12 @@ type DataWithCount = {
   [key: string]: number;
 };
 const getTopTenLanguages = (data: AnalyticsProps["data"]) => {
+  if (!data) return [];
   //Get the names of countries and push it all to an array
-  const filteredLanguages = data
-    ? Object.values(data).flatMap((country) =>
-        country.languages.map((language) => language.name)
-      )
-    : [];
+
+  const filteredLanguages = Object.values(data).flatMap((country) =>
+    country.languages.map((language) => language.name)
+  );
 
   const container: DataWithCount = {};
 
@@ -35,9 +35,7 @@ const getTopTenLanguages = (data: AnalyticsProps["data"]) => {
 
   //Destructure the data into language and count then put it to object so we can sort it by count
   const sorter = Object.entries(container)
-    .map((item) => {
-      const [language, count] = item;
-
+    .map(([language, count]) => {
       return {language, count};
     })
     .sort((a, b) => b.count - a.count);
