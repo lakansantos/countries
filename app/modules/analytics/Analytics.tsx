@@ -8,6 +8,7 @@ type DataWithCount = {
   [key: string]: number;
 };
 const getTopTenLanguages = (data: AnalyticsProps["data"]) => {
+  //Get the names of countries and push it all to an array
   const filteredLanguages = data
     ? Object.values(data).flatMap((country) =>
         country.languages.map((language) => language.name)
@@ -15,6 +16,12 @@ const getTopTenLanguages = (data: AnalyticsProps["data"]) => {
     : [];
 
   const container: DataWithCount = {};
+
+  /* Check if the language is existing in the object.
+   * If existing, it will increment
+   * If not, it will initialize to 1
+   * then it will increment because it will have type of number
+   */
 
   filteredLanguages.map((language) => {
     if (typeof container[language] === "number") {
@@ -26,6 +33,7 @@ const getTopTenLanguages = (data: AnalyticsProps["data"]) => {
     return container;
   });
 
+  //Destructure the data into language and count then put it to object so we can sort it by count
   const sorter = Object.entries(container)
     .map((item) => {
       const [language, count] = item;
