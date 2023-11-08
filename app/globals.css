@@ -39,8 +39,9 @@ header {
 
 .countries-container::-webkit-scrollbar {
   background: inherit;
-  width: 0.2em;
+  width: 0.5em;
 }
 .countries-container::-webkit-scrollbar-thumb {
   background: #777;
+  border-radius: 5px 5px 5px;
 }
