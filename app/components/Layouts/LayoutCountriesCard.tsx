@@ -28,7 +28,7 @@ const LayoutCountriesCard = (props: Data) => {
     : formattedOneLanguage;
 
   return (
-    <div className="w-[220px] h-[350px] bg-white flex flex-col my-4 p-2">
+    <div className="w-[220px] h-[350px] bg-white flex flex-col p-2 shadow-2xl">
       <Image
         src={flag}
         alt={country_name}
