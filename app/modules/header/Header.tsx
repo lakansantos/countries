@@ -4,10 +4,11 @@ import React from "react";
 
 type HeaderProps = {
   data: Data[] | null;
+  searchedData: Data[] | null;
 };
 const Header = (props: HeaderProps) => {
-  const {data} = props;
-  return <LayoutHeader data={data} />;
+  const {data, searchedData} = props;
+  return <LayoutHeader data={data} searchedData={searchedData} />;
 };
 
 export default Header;
