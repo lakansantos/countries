@@ -25,6 +25,11 @@ const Countries = (props: CountriesProps) => {
           };
           return <LayoutCountriesCard key={key} {...dataProps} />;
         })}
+      {!isLoading && data?.length === 0 && (
+        <div>
+          <h1 className="text-4xl font-bold">No Data Found</h1>
+        </div>
+      )}
       {isLoading && <Loading />}
     </LayoutCountriesContainer>
   );
