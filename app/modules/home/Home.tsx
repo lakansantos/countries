@@ -14,10 +14,7 @@ const Home = () => {
   return (
     <React.Fragment>
       <Header data={data} />
-      <Countries
-        data={!!searchedData ? searchedData : data}
-        isLoading={isLoading}
-      />
+      <Countries data={searchedData || data} isLoading={isLoading} />
       <Analytics data={data} />
     </React.Fragment>
   );
