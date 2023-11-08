@@ -4,14 +4,17 @@ type AnalyticsProps = {
   data: Data[] | null;
 };
 
-const getTopTenLanguages = (data: Data[]) => {
+type DataWithCount = {
+  [key: string]: number;
+};
+const getTopTenLanguages = (data: AnalyticsProps["data"]) => {
   const filteredLanguages = data
     ? Object.values(data).flatMap((country) =>
         country.languages.map((language) => language.name)
       )
     : [];
 
-  const container = {};
+  const container: DataWithCount = {};
 
   filteredLanguages.map((language) => {
     if (typeof container[language] === "number") {
@@ -23,9 +26,7 @@ const getTopTenLanguages = (data: Data[]) => {
     return container;
   });
 
-  const arrayContainer = Object.entries(container);
-
-  const sorter = arrayContainer
+  const sorter = Object.entries(container)
     .map((item) => {
       const [language, count] = item;
 
@@ -41,8 +42,17 @@ const Analytics = (props: AnalyticsProps) => {
 
   const topTenLanguages = getTopTenLanguages(data);
 
-  console.log(topTenLanguages);
-  return <div className="h-[80vh]">Analytics</div>;
+  return (
+    <div className="h-[80vh]">
+      {topTenLanguages.map((item, key) => {
+        return (
+          <p key={key}>
+            {item.language} {item.count}
+          </p>
+        );
+      })}
+    </div>
+  );
 };
 
 export default Analytics;
