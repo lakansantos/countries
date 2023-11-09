@@ -1,4 +1,4 @@
-import {getTopTenLanguages} from "@/app/utils/languages";
+import LayoutGraphs from "@/app/components/Layouts/LayoutGraphs";
 import {getTopTenPopulation} from "@/app/utils/population";
 
 type AnalyticsProps = {
@@ -8,27 +8,12 @@ type AnalyticsProps = {
 const Analytics = (props: AnalyticsProps) => {
   const {data} = props;
 
-  const topTenLanguages = getTopTenLanguages(data);
   const topTenPopulation = getTopTenPopulation(data);
 
-  return (
-    <div className="h-[80vh]">
-      {topTenLanguages.map((item, key) => {
-        return (
-          <p key={key}>
-            {item.language} {item.count}
-          </p>
-        );
-      })}
-      {topTenPopulation.map((item, key) => {
-        return (
-          <p key={key}>
-            {item.name} {item.population}
-          </p>
-        );
-      })}
-    </div>
-  );
+  const populations = topTenPopulation.map((item) => item.population);
+  const highest = Math.max(...populations);
+
+  return <LayoutGraphs highest={highest} topTenPopulation={topTenPopulation} />;
 };
 
 export default Analytics;
