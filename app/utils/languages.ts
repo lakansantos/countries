@@ -32,9 +32,9 @@ export const getTopTenLanguages = (data: Data[] | null) => {
   //Destructure the data into language and count then put it to object so we can sort it by count
   const sorter = Object.entries(container)
     .map(([language, count]) => {
-      return {language, count};
+      return {label: language, value: count};
     })
-    .sort((a, b) => b.count - a.count);
+    .sort((a, b) => b.value - a.value);
 
   const topTenLanguages = sorter.slice(0, 10);
   return topTenLanguages;
