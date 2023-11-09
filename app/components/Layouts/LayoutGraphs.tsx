@@ -10,7 +10,7 @@ type Props = {
 const LayoutGraphs = (props: Props) => {
   const {data, highest} = props;
   return (
-    <div className="h-[80vh] flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center">
       <div className="flex flex-col justify-center items-center w-[70%] gap-3">
         {data.map((item, key) => {
           const {label, value} = item;
