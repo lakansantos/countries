@@ -7,6 +7,7 @@ type ButtonProps = {
   buttonItems: {
     label: string;
     onClick?: () => void;
+    defaultActive?: boolean;
   }[];
 };
 
@@ -17,24 +18,29 @@ const Button = (props: ButtonProps) => {
     null
   );
 
-  const handleActiveClick = (key: number) => {
-    if (key === activeButtonIndex) {
+  const [removeDefaultActive, setRemoveDefaultActive] = useState(true);
+
+  const handleActiveClick = (key: number, defaultActive?: boolean) => {
+    if (!!defaultActive) {
       setActiveButtonIndex(null);
     }
+    setRemoveDefaultActive(false);
     setActiveButtonIndex(key);
   };
 
   return (
     <React.Fragment>
       {buttonItems.map((item, key) => {
-        const {label, onClick} = item;
+        const {label, onClick, defaultActive} = item;
         return (
           <BaseButton
             key={key}
             label={label}
-            active={activeButtonIndex === key}
+            active={
+              activeButtonIndex === key || defaultActive === removeDefaultActive
+            }
             onClick={() => {
-              handleActiveClick(key);
+              handleActiveClick(key, defaultActive);
               if (onClick) onClick();
             }}
           />

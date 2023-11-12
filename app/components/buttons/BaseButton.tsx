@@ -3,12 +3,16 @@ import React from "react";
 type ButtonProps = {
   label: string;
   onClick?: () => void;
-  active: boolean;
+  active?: boolean;
+  defaultActive?: boolean;
 };
 const BaseButton = (props: ButtonProps) => {
-  const {label, onClick, active} = props;
+  const {label, onClick, active, defaultActive} = props;
   return (
-    <button onClick={onClick} className={active ? "btn active" : "btn"}>
+    <button
+      onClick={onClick}
+      className={active || defaultActive ? "btn active" : "btn"}
+    >
       {label}
     </button>
   );

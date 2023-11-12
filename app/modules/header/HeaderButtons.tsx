@@ -81,6 +81,7 @@ function headerButtons(props: Props) {
   return [
     {
       label: "Name",
+      defaultActive: true,
       onClick: () => handleSort(sortByName, setSortByName, isSortedByName),
     },
     {
