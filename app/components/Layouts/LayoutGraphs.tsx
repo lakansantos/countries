@@ -6,11 +6,18 @@ type Props = {
     value: number;
   }[];
   highest: number;
+  isPopulation: boolean;
 };
 const LayoutGraphs = (props: Props) => {
-  const {data, highest} = props;
+  const {data, highest, isPopulation} = props;
   return (
     <div className="flex flex-col justify-center items-center">
+      <div className="mt-4 mb-6">
+        <p>
+          10 Most {isPopulation ? "populated countries" : "spoken language"} in
+          the world
+        </p>
+      </div>
       <div className="flex flex-col justify-center items-center w-[70%] gap-3">
         {data.map((item, key) => {
           const {label, value} = item;
@@ -28,7 +35,9 @@ const LayoutGraphs = (props: Props) => {
                   <progress value={value} max={highest} className="h-[50px]" />
                 </div>
               </div>
-              <div className="w-[140px]">{value}</div>
+              <div className="min-w-[140px]  text-wrap">
+                {value.toLocaleString()}
+              </div>
             </div>
           );
         })}

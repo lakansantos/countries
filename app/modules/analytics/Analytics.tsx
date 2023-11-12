@@ -21,6 +21,7 @@ const Analytics = (props: AnalyticsProps) => {
 
   const [showGraph, setShowGraph] = useState("population");
 
+  const isPopulation = showGraph === "population";
   return (
     <div className="h-[80vh] flex flex-col items-center justify-center gap-3">
       <div className="flex justify-center gap-2">
@@ -31,10 +32,18 @@ const Analytics = (props: AnalyticsProps) => {
           Languages
         </button>
       </div>
-      {showGraph === "population" ? (
-        <LayoutGraphs highest={highestPopulation} data={topTenPopulation} />
+      {isPopulation ? (
+        <LayoutGraphs
+          highest={highestPopulation}
+          data={topTenPopulation}
+          isPopulation={isPopulation}
+        />
       ) : (
-        <LayoutGraphs highest={highestLanguage} data={topTenLanguages} />
+        <LayoutGraphs
+          highest={highestLanguage}
+          data={topTenLanguages}
+          isPopulation={isPopulation}
+        />
       )}
     </div>
   );
