@@ -23,9 +23,12 @@ const LayoutCountriesCard = (props: Data) => {
   const formattedOneLanguage = languageNames.join(", ");
 
   //if there's more than 1 language, we can format it with "English, and Filipino"
-  const formattedLanguages = hasMoreThanOneLanguage
-    ? `${filteredLanguages.join(", ")} and ${lastLanguage}`
-    : formattedOneLanguage;
+  const formattedLanguages =
+    hasMoreThanOneLanguage && numberOfLanguages <= 4
+      ? `${filteredLanguages.join(", ")} and ${lastLanguage}`
+      : numberOfLanguages > 4
+      ? `${languageNames.slice(0, 4).join(", ")} and more...`
+      : formattedOneLanguage;
 
   return (
     <div className="w-[220px] h-[350px] bg-white flex flex-col p-2 shadow-2xl">
