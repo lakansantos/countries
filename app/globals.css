@@ -63,3 +63,24 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
   background-color: #3498db;
 }
+
+.loading {
+  width: 5rem;
+  height: 5rem;
+  border: 5px solid transparent;
+  border-top: 6px solid #3498db;
+  border-radius: 100%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

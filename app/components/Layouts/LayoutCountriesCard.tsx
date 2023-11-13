@@ -49,7 +49,7 @@ const LayoutCountriesCard = (props: Data) => {
         <div className="flex flex-col h-full grow gap-1.5">
           <p>Capital: {capital || "N/A"}</p>
           <p>Languages: {formattedLanguages}</p>
-          <p>Population: {population}</p>
+          <p>Population: {population.toLocaleString()}</p>
         </div>
       </div>
     </div>
