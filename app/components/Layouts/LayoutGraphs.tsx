@@ -28,7 +28,7 @@ const LayoutGraphs = (props: Props) => {
               className="w-full flex flex-row justify-center gap-6 items-center"
             >
               <div className="w-[100px] min-w-[100px]">
-                <p className="text-center w-[120px]">{label}</p>
+                <p className="text-left w-[120px]">{label}</p>
               </div>
               <div className="flex w-[1400px]">
                 <div className="flex flex-grow">
