@@ -11,7 +11,7 @@ type Props = {
 const LayoutGraphs = (props: Props) => {
   const {data, highest, isPopulation} = props;
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="flex flex-col justify-center items-center w-full">
       <div className="mt-4 mb-6">
         <p>
           10 Most {isPopulation ? "populated countries" : "spoken language"} in

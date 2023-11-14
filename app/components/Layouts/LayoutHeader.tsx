@@ -33,10 +33,12 @@ const Header = (props: HeaderProps) => {
     }
   };
   return (
-    <header className="h-[30vh] text-center flex flex-col justify-evenly items-center">
-      <h1 className="text-5xl text-sky-400 font-bold">World Countries Data</h1>
+    <header className="min-h-[40vh] sm:min-h-[30vh] sm:h-[30vh] text-center flex flex-col justify-evenly items-center">
+      <h1 className="text-4xl sm:text-5xl text-sky-400 font-bold">
+        World Countries Data
+      </h1>
       <p>Currently, we have {countriesCount} countries</p>
-      <div className="flex flex-col w-1/3">
+      <div className="flex flex-col w-[80%] sm:w-1/3">
         <input
           type="text"
           placeholder="Search a country..."
@@ -53,8 +55,11 @@ const Header = (props: HeaderProps) => {
         </div>
       </div>
 
-      <div className="flex justify-center gap-3 items-center">
-        Sort By: <Button buttonItems={buttonItems} />
+      <div className="inline sm:flex justify-center items-center w-full">
+        <p> Sort By:</p>
+        <div className="flex justify-center gap-3">
+          <Button buttonItems={buttonItems} />
+        </div>
       </div>
     </header>
   );
