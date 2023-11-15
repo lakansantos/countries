@@ -33,7 +33,7 @@ const Header = (props: HeaderProps) => {
     }
   };
   return (
-    <header className="min-h-[40vh] sm:min-h-[30vh] sm:h-[30vh] text-center flex flex-col justify-evenly items-center">
+    <header className="min-h-[40vh] sm:min-h-[300px] sm:h-[30vh] text-center flex flex-col justify-evenly items-center">
       <h1 className="text-4xl sm:text-5xl text-sky-400 font-bold">
         World Countries Data
       </h1>

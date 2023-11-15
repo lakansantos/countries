@@ -37,7 +37,7 @@ const Analytics = (props: AnalyticsProps) => {
   ];
 
   return (
-    <div className="min-h-[80vh] pt-10 sm:pt-0 flex flex-col items-center justify-center gap-3">
+    <div className="min-h-[800px] pt-10 sm:pt-0 flex flex-col items-center justify-center gap-3">
       <div className="flex justify-center gap-2">
         {/* <button className="btn" onClick={() => setShowGraph("population")}>
           Population
