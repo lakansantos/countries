@@ -76,9 +76,8 @@ progress::-webkit-progress-value {
   animation: spin 1s infinite linear;
 }
 
-
-input:focus{
-  outline:none;
+input:focus {
+  outline: none;
   border: 1px solid #3498db;
 }
 
