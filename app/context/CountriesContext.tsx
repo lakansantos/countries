@@ -1,4 +1,4 @@
-import React, {ReactNode, createContext, useContext} from "react";
+import React, {ReactNode, createContext, useContext, useState} from "react";
 import {useGetCountries} from "../hooks/useGetCountries";
 import {AxiosError} from "axios";
 
@@ -48,20 +48,12 @@ type Props = {
 };
 export const CountriesProvider = (props: Props) => {
   const {children} = props;
-  const {
-    data,
-    setData,
-    searchedData,
-    setSearchedData,
-    isLoading,
-    error,
-    isSortedByName,
-    isSortedByCapital,
-    isSortedByPopulation,
-    setSortByName,
-    setSortByCapital,
-    setSortByPopulation,
-  } = useGetCountries();
+
+  const [searchedData, setSearchedData] = useState<Data[] | null>(null);
+  const [isSortedByName, setSortByName] = useState(false);
+  const [isSortedByCapital, setSortByCapital] = useState(false);
+  const [isSortedByPopulation, setSortByPopulation] = useState(false);
+  const {data, setData, isLoading, error} = useGetCountries();
 
   const states = {
     isSortedByName,

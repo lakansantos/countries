@@ -4,12 +4,9 @@ import {useEffect, useState} from "react";
 
 export const useGetCountries = () => {
   const [data, setData] = useState<Data[] | null>(null);
-  const [searchedData, setSearchedData] = useState<Data[] | null>(null);
+
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<AxiosError | null>(null);
-  const [isSortedByName, setSortByName] = useState(false);
-  const [isSortedByCapital, setSortByCapital] = useState(false);
-  const [isSortedByPopulation, setSortByPopulation] = useState(false);
 
   useEffect(() => {
     const getCountries = async () => {
@@ -34,15 +31,7 @@ export const useGetCountries = () => {
   return {
     data,
     setData,
-    searchedData,
-    setSearchedData,
     isLoading,
     error,
-    isSortedByName,
-    isSortedByCapital,
-    isSortedByPopulation,
-    setSortByName,
-    setSortByCapital,
-    setSortByPopulation,
   };
 };
